@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Wpis>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="background-color: rgba(96, 197, 255, 0.336); border-radius: 10px;" class="container text-center m-2">
+    <h2 class=" py-5" style="font-weight: bold; color: rgba(54, 54, 54, 0.808);">
+        TWOJE WAKACJE NA MAURITIUSIE 🇲🇺
+    </h2>
+</div>
+@foreach(var item in Model)
+{
+
+    <div>
+        <img src="@item.ImageUrl" class="py-3" style="border-radius: 50px; width:100%;" />
+        <p>@item.CreateDate</p>
+        <h5>@item.Name</h5>
+        <p>@item.ShortDescription</p>
+        <p>@item.Description</p>   
+        <p>@item.ID</p>
+        <a href="home/artykul?id=@item.ID">Czytaj więcej</a>
+        <div>            
+            @if (item.Galeria != null)
+            {
+                @foreach (var obraz in item.Galeria)
+                {
+                    <p>
+                        <b>@obraz.Name</b><br/>
+                        <img src="@obraz.ImageUrl" class="py-3" style="border-radius: 50px; width:100%;" />
+
+                    </p>
+                  
+                }
+            }
+
+        </div>
+    </div>    
+
+}
+
+
+
+
