@@ -75,6 +75,7 @@ namespace blogcsharp.Controllers
             var mojwpis = Wpisy.FirstOrDefault(xa=>xa.ID == id);
 
             return View(mojwpis);
-        }
+        }      
+       
     }
 }
