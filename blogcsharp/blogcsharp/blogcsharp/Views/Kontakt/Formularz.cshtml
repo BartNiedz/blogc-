@@ -1,29 +1,40 @@
-﻿@*
+﻿@model DaneFormularz
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<div>
+    @Model.email
+    @Model.imie
+    @Model.nazwisko
+</div>
+<div>
+    @Model.tresc
+    <button type="submit" class="btn btn-success mt-2">Wyślij</button>
+</div>
+</div>
 <h1 class=" text-center p-5 m-1" style="background-color: rgba(96, 197, 255, 0.336); border-radius: 10px;">SKONTAKTUJ SIĘ Z NAMI!</h1>
-<form>
+<form action="/kontakt/formularzsend">
     <div class="container-fluid row">
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <label for="exampleFormControlInput1">Adres e-mail</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="adres@email.com">
+            <input type="email" class="form-control" name="email" placeholder="adres@email.com">
         </div>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <label for="exampleFormControlInput1">Wprowadź imię</label>
-            <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Imię">
+            <input type="name" class="form-control" name="imie" placeholder="Imię">
         </div>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <label for="exampleFormControlInput1">Wprowadź nazwisko</label>
-            <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Nazwisko">
+            <input type="name" class="form-control" name="nazwisko" placeholder="Nazwisko">
         </div>
     </div>
     <div class="container-fluid form-group">
         <label class="my-2" for="exampleFormControlTextarea1">Treść wiadomości</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Napisz w jakiej sprawie chciałbyś się z nami skontaktować :)"></textarea>
-        <div class="text-center"><button class="btn btn-success mt-2">Wyślij</button></div>
+        <textarea class="form-control" name="tresc" rows="5" placeholder="Napisz w jakiej sprawie chciałbyś się z nami skontaktować :)"></textarea>
+        <div class="text-center"><button type="submit" class="btn btn-success mt-2">Wyślij</button></div>
     </div>
 
 </form>
-<img class="img-fluid p-5" src="https://picsum.photos/900/300" />
+<img class="img-fluid p-5" src="https://picsum.photos/900/300" />   

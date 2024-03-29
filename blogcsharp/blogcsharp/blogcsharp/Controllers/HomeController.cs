@@ -66,10 +66,12 @@ namespace blogcsharp.Controllers
         {
             return View(Wpisy);
         }
+        // home/ogolne
         public IActionResult Ogolne()
         {
             return View();
         }
+        // home/artykul?id=&&&
         public IActionResult Artykul(int id)
         {
             var mojwpis = Wpisy.FirstOrDefault(xa=>xa.ID == id);
